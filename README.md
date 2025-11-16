@@ -12,4 +12,4 @@ On every push to the `main` branch:
 
 ## 📄 Latest Release
 
-To download the latest version of my resume, visit the [Releases](https://github.com/ironic1234/Resume/releases) page.
+To download the latest version of my resume, visit the [Releases](https://github.com/ronakpjain/Resume/releases) page.
