@@ -129,7 +129,7 @@
 {Purdue University}{May 2028}
 {B.S. in Electrical Engineering, GPA: 3.47/4.0}{West Lafayette, IN}
 \resumeSubSubheadingLeft
-{Relevant Coursework:}{Data Structures and Algorithms, Advanced C Programming, Python for Data Science, \\ Digital System Design, Introduction To Electrical Engineering + Lab I and II}
+{Relevant Coursework:}{Data Structures and Algorithms, Operating Systems, Microprocessor Systems and Interfacing, ASIC Design Lab,  Signals and Systems, Probabilistic Methods, Digital System Design}
 \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
@@ -139,59 +139,70 @@
 \resumeProjectHeading
 {\href{https://github.com/PurdueElectricRacing/firmware}{\uline{Purdue Electric Racing}}}{September 2024 -- Present}
 \resumeItemListStart
-\resumeItem{Migrate a bare-metal task scheduler to a FreeRTOS implementation, significantly improving real-time determinism and system reliability for safety-critical vehicle functions.}
-\resumeItem{Develop a robust hardware abstraction layer for a high-speed external oscillator, enhancing timing accuracy and stability across all microcontroller peripherals and vehicle control systems.}
-\resumeItem{Maintain a UART communication platform for bidirectional data exchange with a PC, enabling real-time data streaming and streamlined firmware validation during development.}
-\resumeItem{Design and manage a CI/CD pipeline using GitHub Actions to automate the build, packaging, and distribution of firmware binaries, ensuring consistent and reliable releases for team-wide deployment.}
+\resumeItem{Engineered FDCAN message routing and filtering library with support for standard and extended identifiers, facilitating reliable inter-controller communication across the vehicle.}
+\resumeItem{Developed comprehensive USART and SPI hardware abstraction layers with DMA support for efficient multi-protocol sensor data acquisition and vehicle integration.}
+\resumeItem{Implemented G4 HSE clock driver enabling 16MHz external oscillator synchronization with PLL support up to 168MHz for deterministic real-time control.}
+\resumeItem{Migrated bare-metal task scheduler to FreeRTOS, improving real-time determinism for safety-critical functions.}
+\resumeItem{Designed CI/CD pipeline automating firmware builds, artifact packaging, and release management.}
+\resumeItem{Contributed to DaqApp2 Rust application enabling real-time CAN message visualization for vehicle analysis.}
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\href{https://github.com/PurdueRM/Embedded-Control}{\uline{Purdue Robomasters}} -- Controls Subteam Lead}{August 2024 -- Present}
+{\href{https://github.com/PurdueRM/Embedded-Control}{\uline{Purdue Robomasters}} -- Controls Subteam Lead}{August 2024 -- January 2026}
 \resumeItemListStart
 \resumeItem{Lead the controls subteam in developing high-performance firmware for STM32 microcontrollers using C, overseeing the complete software development lifecycle for robotic systems.}
-\resumeItem{Carry out a refactor of the legacy codebase, establishing a modular interface to streamline the integration of a new, more powerful STM32H7 series microcontroller.}
-\resumeItem{Architect and implement advanced control algorithms, including PID and odometry, for omni-wheel and swerve-drive robots to achieve precise and fluid battlefield maneuverability.}
+\resumeItem{Carried out a refactor of the legacy codebase, establishing a modular interface to streamline the integration of a new, more powerful STM32H7 series microcontroller.}
+\resumeItem{Architected and implemented advanced control algorithms, including PID and odometry, for omni-wheel and swerve-drive robots to achieve precise and fluid battlefield maneuverability.}
 \resumeItem{Implemented and debugged firmware on-site during the annual Robomaster competition, adapting control logic in a high-pressure environment to meet changing strategic needs.}
 \resumeItemListEnd
 
 \resumeProjectHeading
 {\href{https://github.com/ronakpjain/ronfire}{\uline{Ronfire}}}{May 2025 -- Present}
 \resumeItemListStart
-\resumeItem{Engineered a high-performance, asynchronous HTTP server in Rust, optimizing the non-blocking I/O architecture to achieve a sustained throughput of over 4,100 requests/sec (1.65 GB/s) when serving image files.}
-\resumeItem{Implement concurrent request processing over Unix sockets to maximize server throughput and optimize resource utilization in multi-client environments.}
-\resumeItem{Develop a robust request parsing engine and error handling module to guarantee reliable serving and adherence to HTTP protocol standards.}
+\resumeItem{Engineered a high-performance, asynchronous HTTP server in Rust using Tokio, optimizing the non-blocking I/O architecture to achieve a sustained throughput of over 4,100 requests/sec (1.65 GB/s) when serving image files over Unix domain sockets.}
+\resumeItem{Implemented concurrent request processing and multiplexing to handle multiple simultaneous client connections, maximizing server throughput and enabling efficient resource utilization in high-concurrency environments.}
+\resumeItem{Developed a robust HTTP request parsing engine with full GET request support, including Content-Type negotiation through MIME-type guessing and comprehensive error handling for protocol compliance.}
+\resumeItem{Integrated path traversal sanitization and validation mechanisms to ensure secure file serving, preventing directory escape attacks while maintaining backward compatibility with standard HTTP semantics.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\href{https://github.com/ronakpjain/ronq}{\uline{Ronq}}}{Current}
+\resumeItemListStart
+\resumeItem{Designed and implemented a modern C++ command runner utility leveraging C++20 features to execute multiple shell commands in parallel with full process management and RAII principles.}
+\resumeItem{Architected a safe file descriptor wrapper using move semantics and exclusive ownership patterns, eliminating resource leaks and ensuring deterministic cleanup of system resources across process boundaries.}
+\resumeItem{Developed an error handling system using \texttt{std::expected} for zero-overhead exception-free error propagation, providing compile-time type safety for command execution failures.}
+\resumeItem{Implemented a colored output system that dynamically assigns ANSI color codes to concurrent commands, improving terminal readability and making parallel execution monitoring more intuitive.}
 \resumeItemListEnd
 
 \resumeProjectHeading
 {\href{https://github.com/ronakpjain/dots}{\uline{Dots}}}{September 2024 -- Present}
 \resumeItemListStart
-\resumeItem{Built a highly customized MacOS setup enhancing developer productivity with integrated debugging (DAPs), comprehensive language server support (LSPs), and streamlined workflows}
+\resumeItem{Built a highly customized MacOS and Linux setup enhancing developer productivity with integrated debugging (DAPs), comprehensive language server support (LSPs), and streamlined workflows}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
-\section{Experience}
-\resumeSubHeadingListStart
-
-\resumeSubheading
-{Mentor}{December 2022 -- August 2024}
-{Einstein's Workshop}{Burlington, MA}
-\resumeItemListStart
-\resumeItem{Instructed and mentored students in computer science and engineering subjects, including programming and CAD, fostering hands-on learning and creativity}
-\resumeItem{Organized summer camps with over 20 students each week, delivering sessions on Minecraft Modding and 3D Printing, cultivating critical thinking and technical skills in an engaging environment}
-\resumeItem{Coordinated and managed up to 3 birthday parties per weekend, overseeing projects, event logistics, and ensuring a fun and welcoming environment for attendees}
-\resumeItemListEnd
-
-\resumeSubHeadingListEnd
+% %-----------EXPERIENCE-----------
+% \section{Experience}
+% \resumeSubHeadingListStart
+%
+% \resumeSubheading
+% {Mentor}{December 2022 -- August 2024}
+% {Einstein's Workshop}{Burlington, MA}
+% \resumeItemListStart
+% \resumeItem{Instructed and mentored students in computer science and engineering subjects, including programming and CAD, fostering hands-on learning and creativity}
+% \resumeItem{Organized summer camps with over 20 students each week, delivering sessions on Minecraft Modding and 3D Printing, cultivating critical thinking and technical skills in an engaging environment}
+% \resumeItem{Coordinated and managed up to 3 birthday parties per weekend, overseeing projects, event logistics, and ensuring a fun and welcoming environment for attendees}
+% \resumeItemListEnd
+%
+% \resumeSubHeadingListEnd
 
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 	\small{\item{
-	      \textbf{Languages}{: C, C++, Python, Rust, Lua} \\
-	      \textbf{Developer Tools}{: Git, Docker, AWS, \textbf{NeoVim}} \\
-	      \textbf{Manufacturing}{: PCB design (EasyEDA, Altium), 3D Printing/CAD (Solidworks, Fusion 360), Laser Cutting}
+	      \textbf{Languages}{: C, C++, Rust, Python, Lua} \\
+	      \textbf{Developer Tools}{: Git, Docker, \textbf{NeoVim}} \\
 	      }}
 \end{itemize}
 
