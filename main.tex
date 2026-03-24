@@ -168,10 +168,10 @@
 \resumeProjectHeading
 {\href{https://github.com/ronakpjain/ronq}{\uline{Ronq}}}{June 2025 -- Present}
 \resumeItemListStart
-\resumeItem{Designed and implemented a modern C++ command runner utility leveraging C++20 features to execute multiple shell commands in parallel with full process management and RAII principles.}
-\resumeItem{Architected a safe file descriptor wrapper using move semantics and exclusive ownership patterns, eliminating resource leaks and ensuring deterministic cleanup of system resources across process boundaries.}
-\resumeItem{Developed an error handling system using \texttt{std::expected} for zero-overhead exception-free error propagation, providing compile-time type safety for command execution failures.}
-\resumeItem{Implemented a colored output system that dynamically assigns ANSI color codes to concurrent commands, improving terminal readability and making parallel execution monitoring more intuitive.}
+\resumeItem{Built a C++23 command runner to execute multiple shell commands in parallel using \texttt{fork}, \texttt{exec}, and pipes, with labeled, colorized output.}
+\resumeItem{Designed a move-only RAII file descriptor wrapper to enforce exclusive ownership and prevent resource leaks across process boundaries.}
+\resumeItem{Implemented structured error handling with \texttt{std::expected} for explicit, type-safe propagation of system and execution failures.}
+\resumeItem{Added process group management and signal handling (SIGINT/SIGTERM/SIGKILL) to support graceful shutdown and robust cleanup of foreground and background processes.}
 \resumeItemListEnd
 
 \resumeProjectHeading
@@ -201,8 +201,8 @@
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 	\small{\item{
-	      \textbf{Languages}{: C, C++, Rust, Python, Lua} \\
-	      \textbf{Developer Tools}{: Git, Docker, \textbf{NeoVim}} \\
+		      \textbf{Languages}{: C, C++, Rust, Python, Lua} \\
+		      \textbf{Developer Tools}{: Git, Docker, \textbf{NeoVim}} \\
 	      }}
 \end{itemize}
 
