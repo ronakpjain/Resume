@@ -139,12 +139,11 @@
 \resumeProjectHeading
 {\href{https://github.com/PurdueElectricRacing/firmware}{\uline{Purdue Electric Racing}}}{September 2024 -- Present}
 \resumeItemListStart
-\resumeItem{Engineered FDCAN message routing and filtering library with support for standard and extended identifiers, facilitating reliable inter-controller communication across the vehicle.}
-\resumeItem{Developed comprehensive USART and SPI hardware abstraction layers with DMA support for efficient multi-protocol sensor data acquisition and vehicle integration.}
-\resumeItem{Implemented G4 HSE clock driver enabling 16MHz external oscillator synchronization with PLL support up to 168MHz for deterministic real-time control.}
-\resumeItem{Migrated bare-metal task scheduler to FreeRTOS, improving real-time determinism for safety-critical functions.}
-\resumeItem{Designed CI/CD pipeline automating firmware builds, artifact packaging, and release management.}
-\resumeItem{Contributed to DaqApp2 Rust application enabling real-time CAN message visualization for vehicle analysis.}
+\resumeItem{Architected a production bootloader framework for STM32 G4/F4 controllers, including CRC-validated firmware updates, metadata-managed boot flow, and safe application handoff logic.}
+\resumeItem{Engineered an FDCAN messaging library in Python with routing/filtering for standard and extended identifiers, enabling reliable inter-controller communication across vehicle subsystems.}
+\resumeItem{Built firmware tooling to automate bootloader/app builds, CRC generation, combined recovery image creation, and release packaging for deployment workflows.}
+\resumeItem{Contributed to DaqApp2 (Rust) to support real-time CAN telemetry visualization and bootloader update operations, improving serviceability and debugging speed.}
+\resumeItem{Developed robust USART/SPI HALs with DMA and migrated scheduling from bare-metal loops to FreeRTOS to improve determinism for safety-critical control tasks.}
 \resumeItemListEnd
 
 \resumeProjectHeading
@@ -170,7 +169,6 @@
 \resumeItemListStart
 \resumeItem{Built a C++23 command runner to execute multiple shell commands in parallel using \texttt{fork}, \texttt{exec}, and pipes, with labeled, colorized output.}
 \resumeItem{Designed a move-only RAII file descriptor wrapper to enforce exclusive ownership and prevent resource leaks across process boundaries.}
-\resumeItem{Implemented structured error handling with \texttt{std::expected} for explicit, type-safe propagation of system and execution failures.}
 \resumeItem{Added process group management and signal handling (SIGINT/SIGTERM/SIGKILL) to support graceful shutdown and robust cleanup of foreground and background processes.}
 \resumeItemListEnd
 
