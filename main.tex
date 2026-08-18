@@ -182,10 +182,10 @@
 \resumeProjectHeading
 {\href{https://github.com/ronakpjain/ronfire}{\uline{Ronfire}}}{May 2025 -- Present}
 \resumeItemListStart
-\resumeItem{Engineered a high-performance, asynchronous HTTP server in Rust using Tokio, optimizing the non-blocking I/O architecture to achieve a sustained throughput of over 4,100 requests/sec (1.65 GB/s) when serving image files over Unix domain sockets.}
-\resumeItem{Implemented concurrent request processing and multiplexing to handle multiple simultaneous client connections, maximizing server throughput and enabling efficient resource utilization in high-concurrency environments.}
-\resumeItem{Developed a robust HTTP request parsing engine with full GET request support, including Content-Type negotiation through MIME-type guessing and comprehensive error handling for protocol compliance.}
-\resumeItem{Integrated path traversal sanitization and validation mechanisms to ensure secure file serving, preventing directory escape attacks while maintaining backward compatibility with standard HTTP semantics.}
+\resumeItem{Engineered a high-performance asynchronous HTTP server in Rust with Tokio, serving static and plugin-backed routes over Unix domain sockets at over 4,100 requests/sec (1.65 GB/s) for image workloads.}
+\resumeItem{Refactored the server into focused HTTP, transport, static-file, runtime, and plugin modules while preserving root-level APIs and supporting feature-gated builds with no default features.}
+\resumeItem{Designed a compiled-in plugin architecture with object-safe handlers, factory-based registration, strict configuration validation, exact-route dispatch, and a feature-gated reverse proxy using reqwest and rustls.}
+\resumeItem{Hardened request and proxy handling with bounded header/body reads, timeout and redirect policies, TTL caching with stale fallback, byte-range/HEAD support, and document-root containment against traversal and symlink escapes.}
 \resumeItemListEnd
 
 \resumeProjectHeading
