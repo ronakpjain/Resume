@@ -56,7 +56,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-5pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -92,7 +92,7 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+    \par\item
         \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
             \textbf{#1} & #2 \\
     \end{tabular*}\vspace{0pt}
@@ -104,8 +104,8 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=1pt, itemsep=0pt, parsep=0pt]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in, topsep=0pt, itemsep=0pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -138,11 +138,11 @@
 {Software Engineering Intern}{May 2026 -- August 2026}
 {Tesla}{Palo Alto, CA}
 \resumeItemListStart
-\resumeItem{Engineered and integrated firmware features, including Vehicle-to-Grid (V2G) PowerShare capabilities, for new charging products within a large, shared monorepo, using Protocol Buffers for structured interfaces.}
-\resumeItem{Worked across Arm Cortex-M33 and Cortex-A55 cores using FreeRTOS, Embedded Linux, and Buildroot, with CAN-based communication and gRPC service interfaces connecting charging system components.}
-\resumeItem{Developed asynchronous components in Rust with Tokio to coordinate concurrent charging-system operations.}
-\resumeItem{Leveraged CI/CD frameworks and AI-assisted development tools to automate builds and test execution, enabling reliable integration and delivery of firmware changes.}
-\resumeItem{Created and maintained unit and processor-in-the-loop (PIL) tests to validate firmware behavior, reducing hardware-test setup time by approximately 30\%.}
+\resumeItem{Designed and integrated V2G PowerShare firmware for new charging products in a shared monorepo, defining structured component interfaces with Protocol Buffers.}
+\resumeItem{Developed firmware for Arm Cortex-M33 and Cortex-A55 platforms, integrating FreeRTOS, Embedded Linux, Buildroot, CAN communication, and gRPC service interfaces.}
+\resumeItem{Orchestrated asynchronous Rust components with Tokio to coordinate concurrent charging-system operations.}
+\resumeItem{Streamlined firmware integration and delivery by automating builds and test execution through CI/CD and AI-assisted development workflows, improving reliability.}
+\resumeItem{Authored unit and processor-in-the-loop tests to validate firmware behavior before hardware deployment, reducing test setup time by approximately 30\%.}
 \resumeItemListEnd
 
 % \resumeSubheading
@@ -161,13 +161,14 @@
 \resumeSubHeadingListStart
 
 \resumeProjectHeading
-{\href{https://github.com/PurdueElectricRacing/firmware}{\uline{Purdue Electric Racing}}}{September 2024 -- Present}
+{\href{https://github.com/PurdueElectricRacing/monorepo}{\uline{Purdue Electric Racing}}}{September 2024 -- Present}
 \resumeItemListStart
-\resumeItem{Architected a production bootloader framework for STM32 G4/F4 controllers, including CRC-validated firmware updates, metadata-managed boot flow, and safe application handoff logic.}
-\resumeItem{Engineered an FDCAN messaging library in Python with routing/filtering for standard and extended identifiers, enabling reliable inter-controller communication across vehicle subsystems.}
-\resumeItem{Built firmware tooling to automate bootloader/app builds, CRC generation, combined recovery image creation, and release packaging for deployment workflows.}
-\resumeItem{Contributed to DaqApp2 (Rust) to support real-time CAN telemetry visualization and bootloader update operations, improving serviceability and debugging speed.}
-\resumeItem{Developed robust USART/SPI HALs with DMA and migrated scheduling from bare-metal loops to FreeRTOS to improve determinism for safety-critical control tasks.}
+\resumeItem{Architected a CAN bootloader and DaqApp update workflow for six STM32G474 nodes with generated transports, CRC/vector validation, metadata commits, and reset-safe recovery.}
+\resumeItem{Automated firmware packaging with Python and Rust tooling to generate manifest-driven firmware archives, pad images, compute STM32 CRCs, and validate sizes, addresses, paths, and CAN IDs.}
+\resumeItem{Implemented STM32G4 HALs for flash, ADC, USB, SPI, and USART with DMA-backed transfers, input validation, and dedicated hardware test targets.}
+\resumeItem{Integrated firmware testing with CMake, GoogleTest/CTest, C23 shims, sanitizers, coverage, and GitHub Actions.}
+\resumeItem{Expanded the CAN library to support FDCAN, route and filter messages, and handle standard and extended identifiers.}
+\resumeItem{Configured a Yocto/KAS Raspberry Pi CM5 PREEMPT\_RT image with 1\,kHz timers and PPS support, then automated cached WIC builds in GitHub Actions.}
 \resumeItemListEnd
 
 % \resumeProjectHeading
@@ -182,18 +183,19 @@
 \resumeProjectHeading
 {\href{https://github.com/ronakpjain/ronfire}{\uline{Ronfire}}}{May 2025 -- Present}
 \resumeItemListStart
-\resumeItem{Engineered a high-performance asynchronous HTTP server in Rust with Tokio, serving static and plugin-backed routes over Unix domain sockets at over 4,100 requests/sec (1.65 GB/s) for image workloads.}
-\resumeItem{Refactored the server into focused HTTP, transport, static-file, runtime, and plugin modules while preserving root-level APIs and supporting feature-gated builds with no default features.}
-\resumeItem{Designed a compiled-in plugin architecture with object-safe handlers, factory-based registration, strict configuration validation, exact-route dispatch, and a feature-gated reverse proxy using reqwest and rustls.}
-\resumeItem{Hardened request and proxy handling with bounded header/body reads, timeout and redirect policies, TTL caching with stale fallback, byte-range/HEAD support, and document-root containment against traversal and symlink escapes.}
+\resumeItem{Engineered an asynchronous Rust HTTP server with Tokio, serving static and plugin routes over Unix sockets at 4,100+ requests/sec and 1.65 GB/s on image workloads.}
+\resumeItem{Refactored HTTP, transport, static-file, runtime, and plugin layers to expose stable APIs and support feature-gated builds.}
+\resumeItem{Architected a compiled-in plugin system with object-safe handlers, factory registration, strict configuration validation, and exact-route dispatch.}
+\resumeItem{Built a fixed-target proxy plugin with host-restricted redirects, incremental response-size enforcement, request timeouts, TTL caching, and stale fallback.}
+\resumeItem{Hardened HTTP handling with bounded header reads, pipelined-request framing, byte-range/HEAD support, and document-root containment against traversal and symlink escapes.}
 \resumeItemListEnd
 
 \resumeProjectHeading
 {\href{https://github.com/ronakpjain/ronq}{\uline{Ronq}}}{June 2025 -- Present}
 \resumeItemListStart
-\resumeItem{Built a C++23 command runner to execute multiple shell commands in parallel using \texttt{fork}, \texttt{exec}, and pipes, with labeled, colorized output.}
-\resumeItem{Designed a move-only RAII file descriptor wrapper to enforce exclusive ownership and prevent resource leaks across process boundaries.}
-\resumeItem{Added process group management and signal handling (SIGINT/SIGTERM/SIGKILL) to support graceful shutdown and robust cleanup of foreground and background processes.}
+\resumeItem{Developed a C++23 command runner to execute multiple shell commands concurrently using \texttt{fork}, \texttt{exec}, and pipes, with labeled, colorized output.}
+\resumeItem{Introduced a move-only RAII file descriptor wrapper to enforce ownership and prevent cross-process resource leaks.}
+\resumeItem{Coordinated foreground and background process lifecycles with process-group management and SIGINT/SIGTERM/SIGKILL handling, enabling graceful shutdown and robust cleanup.}
 \resumeItemListEnd
 
 % \resumeProjectHeading
@@ -211,8 +213,9 @@
 \begin{itemize}[leftmargin=0.15in, label={}]
 	\small{\item{
 		      \textbf{Languages}{: C, C++, Rust, Python, Lua} \\
-		      \textbf{Embedded Systems}{: STM32, FreeRTOS, FDCAN, SPI, USART, DMA} \\
-		      \textbf{Tools \& Practices}{: Git, Docker, CI/CD, unit testing, PIL testing, AI-assisted development, \textbf{NeoVim}}
+		      \textbf{Embedded \& RTOS}{: STM32, Arm Cortex-M, FreeRTOS, CAN/FDCAN, SPI, USART, DMA, ADC, USB} \\
+		      \textbf{Systems \& Build}{: Embedded Linux, Yocto, Buildroot, KAS, PREEMPT\_RT, CMake, Docker, GitHub Actions} \\
+		      \textbf{Frameworks \& Tools}{: Tokio, gRPC, Protocol Buffers, GoogleTest, CTest, unit/PIL testing, Git, Neovim}
 	      }}
 \end{itemize}
 
