@@ -181,21 +181,21 @@
 % \resumeItemListEnd
 
 \resumeProjectHeading
-{\href{https://github.com/ronakpjain/ronfire}{\uline{Ronfire}}}{May 2025 -- Present}
+{\href{https://github.com/ronakpjain/fil}{\uline{FIL}}}{July 2026 -- Present}
 \resumeItemListStart
-\resumeItem{Engineered an asynchronous Rust HTTP server with Tokio, serving static and plugin routes over Unix sockets at 4,100+ requests/sec and 1.65 GB/s on image workloads.}
-\resumeItem{Refactored HTTP, transport, static-file, runtime, and plugin layers to expose stable APIs and support feature-gated builds.}
-\resumeItem{Architected a compiled-in plugin system with object-safe handlers, factory registration, strict configuration validation, and exact-route dispatch.}
-\resumeItem{Built a fixed-target proxy plugin with host-restricted redirects, incremental response-size enforcement, request timeouts, TTL caching, and stale fallback.}
-\resumeItem{Hardened HTTP handling with bounded header reads, pipelined-request framing, byte-range/HEAD support, and document-root containment against traversal and symlink escapes.}
+\resumeItem{Built FIL from scratch in C++20 to run real ARM ELF firmware at the instruction level on an emulated STM32G4/Cortex-M4F, modeling CPU exceptions and memory alongside DMA, timers, ADC, USART, and FDCAN.}
+\resumeItem{Connected six simulated boards over virtual CAN with deterministic scheduling and simulated-time events, enabling repeatable vehicle-network scenarios with live CAN frame injection and JSONL execution traces.}
+\resumeItem{Accelerated instruction-level firmware execution with caching, exact-state loop batching, and transactional parallel slices, achieving 1.37x real-time throughput on a 96M-instruction workload.}
+\resumeItem{Validated FIL with GoogleTest/CTest and sanitizers; used simulated-time event inputs, live CAN frame injection, and JSONL traces to reproduce and inspect firmware behavior across the six-board vehicle network.}
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\href{https://github.com/ronakpjain/ronq}{\uline{Ronq}}}{June 2025 -- Present}
+{\href{https://github.com/ronakpjain/ronfire}{\uline{Ronfire}}}{May 2025 -- Present}
 \resumeItemListStart
-\resumeItem{Developed a C++23 command runner to execute multiple shell commands concurrently using \texttt{fork}, \texttt{exec}, and pipes, with labeled, colorized output.}
-\resumeItem{Introduced a move-only RAII file descriptor wrapper to enforce ownership and prevent cross-process resource leaks.}
-\resumeItem{Coordinated foreground and background process lifecycles with process-group management and SIGINT/SIGTERM/SIGKILL handling, enabling graceful shutdown and robust cleanup.}
+\resumeItem{Built an asynchronous Tokio-based Rust HTTP server with modular transport and static-file layers, serving plugin routes over Unix sockets at 4,100+ requests/sec and 1.65 GB/s on image workloads in benchmark testing.}
+\resumeItem{Refactored HTTP, transport, static-file, runtime, and plugin layers into feature-gated APIs; implemented compiled-in handlers with factory registration, configuration validation, and exact-route dispatch.}
+\resumeItem{Implemented a proxy plugin with host-restricted redirects, response-size limits, timeouts, TTL caching, and stale fallback.}
+\resumeItem{Hardened HTTP handling with bounded header reads and pipelined-request framing; supported byte-range and HEAD requests while containing static files within the document root against traversal and symlink escapes.}
 \resumeItemListEnd
 
 % \resumeProjectHeading
